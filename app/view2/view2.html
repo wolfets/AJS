@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <p>This is the partial for view 2.</p>
+  <p>
+    Showing of 'interpolate' filter:
+    {{ 'Current version is v%VERSION%.' | interpolate }}
+  </p>
+
+  <!-- TRI prix -->
+  <select ng-model="order">
+    <option value="-prix">
+      Du plus cher au moins cher
+    </option>
+    <option value="+prix">
+      Du moins cher au plus cher
+    </option>
+  </select>
+  <!-- TRI prix -->
+
+
+
+  <input type="text" ng-model="ville" value="chercher une ville">
+  <div ng-init="create()">
+
+    <table class="col-lg-8">
+    <tr ng-repeat="voyage in voyages | filter:{ville:ville} | orderBy:order">
+      <td>
+        <h3>
+          {{voyage.depart}} / {{voyage.ville}}
+        </h3>
+        <p>
+          {{voyage.pays}} <br>prix : {{voyage.prix}}
+        </p>
+      </td>
+    </tr>
+    </table>
+
+  </div>
+</div>
