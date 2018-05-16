@@ -19,7 +19,7 @@ angular.module('myApp.view1', ['ngRoute'])
             console.log($scope.lignes);
           })
           .error(function () {
-             alert('err')
+             alert('err : ')
           });
   };
 
